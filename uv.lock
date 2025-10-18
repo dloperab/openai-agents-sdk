@@ -114,6 +114,15 @@ wheels = [
 ]
 
 [[package]]
+name = "googlemaps"
+version = "4.10.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fe/26/bca4d737a9acea25e94c19940a780bbf0be64a691f7caf3a68467d3a5838/googlemaps-4.10.0.tar.gz", hash = "sha256:3055fcbb1aa262a9159b589b5e6af762b10e80634ae11c59495bd44867e47d88", size = 33056 }
+
+[[package]]
 name = "griffe"
 version = "1.14.0"
 source = { registry = "https://pypi.org/simple" }
@@ -259,6 +268,15 @@ wheels = [
 ]
 
 [[package]]
+name = "markdown"
+version = "3.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz", hash = "sha256:d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a", size = 364585 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/70/ae/44c4a6a4cbb496d93c6257954260fe3a6e91b7bed2240e5dad2a717f5111/markdown-3.9-py3-none-any.whl", hash = "sha256:9f4d91ed810864ea88a6f32c07ba8bee1346c0cc1f6b1f9f6c822f2a9667d280", size = 107441 },
+]
+
+[[package]]
 name = "mcp"
 version = "1.18.0"
 source = { registry = "https://pypi.org/simple" }
@@ -322,6 +340,8 @@ name = "openai-agents-sdk"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "googlemaps" },
+    { name = "markdown" },
     { name = "openai-agents" },
     { name = "python-dotenv" },
     { name = "ruff" },
@@ -329,6 +349,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "googlemaps", specifier = ">=4.10.0" },
+    { name = "markdown", specifier = ">=3.9" },
     { name = "openai-agents", specifier = ">=0.4.0" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "ruff", specifier = ">=0.14.1" },

@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "googlemaps>=4.10.0",
+    "markdown>=3.9",
     "openai-agents>=0.4.0",
     "python-dotenv>=1.1.1",
     "ruff>=0.14.1",
