@@ -15,9 +15,19 @@ nutrition_agent = Agent(
     """,
 )
 
+async def main_trace():
+    print("=== Running with trace ===")    
 
-async def main():
-    response_stream = Runner.run_streamed(nutrition_agent, "How health are bananas?")
+    with trace("Simple Nutrition Agent"):
+        response = await Runner.run(nutrition_agent, "How healthy are bananas?")
+    
+    print(response)
+
+
+async def main_stream():
+    print("=== Running with stream ===")
+    
+    response_stream = Runner.run_streamed(nutrition_agent, "How healthy are bananas?")
 
     async for event in response_stream.stream_events():
         if event.type == "raw_response_event" and isinstance(
@@ -27,4 +37,5 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main_trace())
+    asyncio.run(main_stream())
