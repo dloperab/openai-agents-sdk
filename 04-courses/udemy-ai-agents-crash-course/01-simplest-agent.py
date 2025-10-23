@@ -10,9 +10,9 @@ dotenv.load_dotenv()
 nutrition_agent = Agent(
     name="Nutrition Assistant",
     instructions="""
-  You are a helpful assistant giving out nutrition advice.
-  You give concise answers.
-  """,
+    You are a helpful assistant giving out nutrition advice.
+    You give concise answers.
+    """,
 )
 
 
