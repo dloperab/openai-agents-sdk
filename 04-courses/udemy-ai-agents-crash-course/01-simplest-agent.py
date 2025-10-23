@@ -1,6 +1,5 @@
 import asyncio
 import dotenv
-import os
 
 from agents import Agent, Runner, trace
 from openai.types.responses import ResponseTextDeltaEvent
@@ -15,18 +14,19 @@ nutrition_agent = Agent(
     """,
 )
 
+
 async def main_trace():
-    print("=== Running with trace ===")    
+    print("=== Running with trace ===")
 
     with trace("Simple Nutrition Agent"):
         response = await Runner.run(nutrition_agent, "How healthy are bananas?")
-    
+
     print(response)
 
 
 async def main_stream():
     print("=== Running with stream ===")
-    
+
     response_stream = Runner.run_streamed(nutrition_agent, "How healthy are bananas?")
 
     async for event in response_stream.stream_events():
